@@ -18,6 +18,14 @@ variable "list2" {
 output "combined_list" {
   value = concat(var.list1, var.list2)
 }
+
+# Output
+combined_list = tolist([
+  "a",
+  "b",
+  "c",
+  "d",
+])
 ```
 
 2. `element(list, index)`: Returns the element at the specified index in a list.
