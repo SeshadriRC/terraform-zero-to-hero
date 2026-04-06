@@ -29,3 +29,41 @@ terraform apply -var-file=dev.tfvars
 ```
 
 By using `.tfvars` files, you can keep your Terraform code more generic and flexible while tailoring configurations to different scenarios and environments.
+
+
+## Practicals
+
+```bash
+3 files needed - main.tf, variables.tf, terraform.tfvars
+
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/terraform-zero-to-hero/Day-3 (main)
+$ cat main.tf
+provider "aws" {
+  
+  region = "ap-south-1"
+}
+
+resource "aws_instance" "Instance_1" {
+ 
+ ami = var.ami_value
+ instance_type = var.instance_type_value
+ subnet_id = var.subnet_id_value
+  
+}
+
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/terraform-zero-to-hero/Day-3 (main)
+$ cat variables.tf 
+variable "ami_value" {}
+variable "instance_type_value" {}
+variable "subnet_id_value" {}
+
+
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/terraform-zero-to-hero/Day-3 (main)
+$ cat terraform.tfvars
+ami_value= "ami-0a14f53a6fe4dfcd1"
+instance_type_value= "t2.micro"
+subnet_id_value= "subnet-0ccf3b66e816dfd2a"
+
+user@LAPTOP-QMBUJPPJ MINGW64 /e/my-git/terraform-zero-to-hero/Day-3 (main)
+$ 
+```
