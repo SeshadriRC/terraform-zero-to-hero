@@ -109,4 +109,15 @@ By following these steps, you can securely store your Terraform state in S3 with
 By following these steps, you can securely store your Terraform state in S3 with state locking using DynamoDB, mitigating the disadvantages of storing sensitive information in version control systems and ensuring safe concurrent access to your infrastructure.
 ```
 
+
 Please note that you should adapt the configuration and commands to your specific AWS environment and requirements.
+
+```
+
+## Practicals
+
+- first we ned to execute *main.tf* post that we can initialize *backend.tf*
+<img width="1919" height="622" alt="image" src="https://github.com/user-attachments/assets/de87061b-7a6c-4312-9c1c-236df7f8c761" />
+
+<img width="1919" height="385" alt="image" src="https://github.com/user-attachments/assets/47983696-eb5c-476d-8805-f22399311da7" />
+
