@@ -1,24 +1,35 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
-resource "aws_instance" "abhishek" {
+resource "aws_instance" "sesha_ec2_instance" {
+  ami           = "ami-019715e0d74f695be" # replace this
   instance_type = "t2.micro"
-  ami = "ami-053b0d53c279acc90" # change this
-  subnet_id = "subnet-019ea91ed9b5252e7" # change this
+  subnet_id     = "subnet-0ccf3b66e816dfd2a" # replace this
+  tags = {
+    Name        = "sesha-ec2-instance"
+    Environment = "dev"
+  }
 }
 
-resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "abhishek-s3-demo-xyz" # change this
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "terraform-backend-bucket-sesha"
+
+  tags = {
+    Name        = "terraform-backend-bucket"
+    Environment = "dev"
+  }
+  
 }
 
-resource "aws_dynamodb_table" "terraform_lock" {
-  name           = "terraform-lock"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "LockID"
+resource "aws_dynamodb_table" "my-first-table" {
+  name         = "terraform-lock"
+  billing_mode = "PAY_PER_REQUEST"
+  hash_key     = "LockID"
 
   attribute {
     name = "LockID"
     type = "S"
   }
+  
 }
