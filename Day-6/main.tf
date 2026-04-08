@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-south-1"
 }
 
 variable "ami" {
@@ -11,9 +11,9 @@ variable "instance_type" {
   type = map(string)
 
   default = {
-    "dev" = "t2.micro"
-    "stage" = "t2.medium"
-    "prod" = "t2.xlarge"
+    "dev" = "t2.nano"
+    "stage" = "t2.small"
+    "prod" = "t2.micro"
   }
 }
 
