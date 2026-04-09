@@ -17,6 +17,8 @@ To create an AWS EC2 instance with Ubuntu, you can use the AWS Management Consol
 
 To install Vault on the EC2 instance, you can use the following steps:
 
+[official-doc](https://developer.hashicorp.com/vault/install)
+
 **Install gpg**
 
 ```
