@@ -66,4 +66,7 @@ Scenario 2:
 
 - A) Use audit/activity logs to see who made changes, if its changed by user and resources is managed by TF, then send an alert using lambda/azure functions and notify.
 
+<img width="1919" height="740" alt="image" src="https://github.com/user-attachments/assets/cd2df6ed-1627-4f80-b2f7-2974d5c5a145" />
+
+
 - B) Apply strict IAM rules so that no one can login to console.
