@@ -6,12 +6,13 @@
 
 - Importing EC2 instance to create a state file.
 
+---
 
 ## Scenario - 2: Terraform drift detection 
 
 - if some one manually changed any settings for any resource, then detecting that change is called drift detection.
 
-# There are 2 ways to detect it.
+### There are 2 ways to detect it.
 
 Scenario 1: Use terraform refresh using a cron job. ( terraform refresh, refershes the recents changes which was done manually to the statefile and keeps it updated.
 
