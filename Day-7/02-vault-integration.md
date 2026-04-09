@@ -120,6 +120,7 @@ To enable the AppRole authentication method in Vault, you need to use the Vault 
 Run the following command to enable the AppRole authentication method:
 
 ```bash
+export VAULT_ADDR='http://0.0.0.0:8200'
 vault auth enable approle
 ```
 <img width="1174" height="209" alt="image" src="https://github.com/user-attachments/assets/10e642f5-3a42-43e0-9c1d-3c16ff33ef6a" />
@@ -193,6 +194,8 @@ You can retrieve the Role ID using the Vault CLI:
 ```bash
 vault read auth/approle/role/terraform/role-id
 ```
+<img width="768" height="101" alt="image" src="https://github.com/user-attachments/assets/cd5b6874-71ba-49d1-b3a5-1da2c43b2dd5" />
+
 
 Save the Role ID for use in your Terraform configuration.
 
@@ -201,7 +204,9 @@ Save the Role ID for use in your Terraform configuration.
 To generate a Secret ID, you can use the following command:
 
 ```bash
-vault write -f auth/approle/role/my-approle/secret-id
-   ```
+vault write -f auth/approle/role/terraform/secret-id
+```
+<img width="826" height="154" alt="image" src="https://github.com/user-attachments/assets/47abd538-de4d-4e7c-8012-bf42822c6a05" />
+
 
 This command generates a Secret ID and provides it in the response. Save the Secret ID securely, as it will be used for Terraform authentication.
